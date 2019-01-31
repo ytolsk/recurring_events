@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_date: 2019-01-30 21:56:01
+  to_date: 2019-01-30 21:56:01
+  event: one
+
+two:
+  from_date: 2019-01-30 21:56:01
+  to_date: 2019-01-30 21:56:01
+  event: two
