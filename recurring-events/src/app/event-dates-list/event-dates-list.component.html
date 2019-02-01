@@ -1,0 +1,4 @@
+<h3 *ngIf="datesList.length > 0"> There are {{datesList.length}} occurrences of this event</h3>
+<ul>
+  <li *ngFor="let date of datesList">{{date.start}} to {{date.end}}</li>
+</ul>

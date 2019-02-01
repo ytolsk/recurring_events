@@ -1,0 +1,12 @@
+<div *ngIf="showMePartially">
+  <h2>Schedule Multiple Events </h2>
+  <div class="form-group">
+    <label for="eventFrequency">How often does this even occur</label>
+        <select  id="eventFrequency">
+          <option *ngFor="let frequency of frequencies" [value]="frequency.value">{{frequency.viewValue}}
+          </option>
+        </select>
+  </div>
+
+
+</div>
