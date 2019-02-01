@@ -6,3 +6,12 @@ Event.create!([
                  },
                  { name: 'Trying Stuff Until it Works' }
              ])
+
+OccurrenceDate.create!(
+                  [
+                      {event_id: 1,
+                       start: DateTime.now(),
+                       end: DateTime.now() + 1.hour
+                      }
+                  ]
+)

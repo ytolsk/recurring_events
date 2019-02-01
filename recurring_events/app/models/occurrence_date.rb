@@ -1,8 +1,8 @@
 class OccurrenceDate < ApplicationRecord
   belongs_to :event
 
-  attribute :start, :date
-  attribute :end, :date
+  attribute :start, :datetime
+  attribute :end, :datetime
 
 
 end

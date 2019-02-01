@@ -4,12 +4,17 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.includes(:occurrence_date)
+    respond_to do |format|
+      format.html
+      format.json { render :json => @events.as_json(:include => [:occurrence_date])}
+    end
   end
 
-  # GET /events/1
-  # GET /events/1.json
+  # # GET /events/1
+  # # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
@@ -25,7 +30,9 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     respond_to do |format|
+
       if @event.save
+        @event.create_occurrences
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
